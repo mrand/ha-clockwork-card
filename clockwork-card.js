@@ -57,7 +57,8 @@ class ClockWorkCard extends HTMLElement {
         var _date = _date_time.toLocaleDateString(_locale, {
             weekday : 'long',
             day : 'numeric',
-            month : 'long'
+            month : 'long',
+            year: 'numeric'
         });
 
         //Build List of Other Timezones
@@ -128,18 +129,16 @@ class ClockWorkCard extends HTMLElement {
                 align-items: flex-start;
             }
             .clock {
-                
                 padding: 5px 5px 5px 0px;
                 margin: auto;
             }
             .other_clocks {
                 float: right;
                 margin: auto;
-
             }
             .otime {
                 padding: 0px 5px 2px;
-                font-size: 14px;
+                font-size: 11px;
                 font-family: var(--paper-font-headline_-_font-family);
                 letter-spacing: var(--paper-font-headline_-_letter-spacing);
                 text-rendering: var(--paper-font-common-expensive-kerning_-_text-rendering);
@@ -147,13 +146,13 @@ class ClockWorkCard extends HTMLElement {
             .tz_locale {
                 padding: 0px 5px 1px;
                 color: var(--secondary-text-color);
-                font-size: 11px;
+                font-size: 12px;
+                font-weight: bold;
                 font-family: var(--paper-font-headline_-_font-family);
                 letter-spacing: var(--paper-font-headline_-_letter-spacing);
                 text-rendering: var(--paper-font-common-expensive-kerning_-_text-rendering);
             }     
             .time {
-                padding: 
                 font-family: var(--paper-font-headline_-_font-family);
                 -webkit-font-smoothing: var(--paper-font-headline_-_-webkit-font-smoothing);
                 font-size: 56px;
@@ -161,9 +160,9 @@ class ClockWorkCard extends HTMLElement {
                 letter-spacing: var(--paper-font-headline_-_letter-spacing);
                 line-height: 1em;
                 text-rendering: var(--paper-font-common-expensive-kerning_-_text-rendering);
+                text-align: center;
             }
             .date {
-
                 font-family: var(--paper-font-headline_-_font-family);
                 -webkit-font-smoothing: var(--paper-font-headline_-_-webkit-font-smoothing);
                 font-size: 24px;
@@ -171,6 +170,7 @@ class ClockWorkCard extends HTMLElement {
                 letter-spacing: var(--paper-font-headline_-_letter-spacing);
                 line-height: var(--paper-font-headline_-_line-height);
                 text-rendering: var(--paper-font-common-expensive-kerning_-_text-rendering);
+                text-align: center;
             }          
         `;
      
