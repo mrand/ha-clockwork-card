@@ -14,6 +14,8 @@ class ClockWorkCard extends HTMLElement {
 
         const config = this.config;
         const locale = config.locale;
+        const _showYear = config.showYear;
+        const showYear = _showYear ? _showYear : false;
         const _locale = locale ? locale : undefined;
         var _other_timezones = config.other_time;
         
@@ -54,12 +56,17 @@ class ClockWorkCard extends HTMLElement {
         });
 
         //Format the Date
-        var _date = _date_time.toLocaleDateString(_locale, {
-            weekday : 'long',
-            day : 'numeric',
-            month : 'long',
-            year: 'numeric'
-        });
+        var dateParts = {
+          weekday : 'long',
+          day : 'numeric',
+          month : 'long',
+        };
+
+        if (showYear) {
+          dateParts.year = 'numeric';
+        }
+
+        var _date = _date_time.toLocaleDateString(_locale, dateParts);
 
         //Build List of Other Timezones
         //
